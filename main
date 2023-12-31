@@ -1,5 +1,6 @@
-- name: Installing Ronoshop Project
+---
+- name: Installing Roboshop Project
   hosts: mongodb
   become: yes
   roles:
-  - mongodb
+    - mongodb
