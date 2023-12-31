@@ -1,7 +1,3 @@
-- name: Include component-specific variables
-  include_vars: "{{ component }}.yml"
-  when: component is defined
-
 - name: Installing Roboshop Project
   hosts: "{{ component }}"
   become: yes
