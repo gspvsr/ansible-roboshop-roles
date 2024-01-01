@@ -1,7 +1,7 @@
 - name: Install python
   ansible.builtin.import_role:
     name: common
-    tasks_from: npython
+    tasks_from: python
 
 - name: SetUp Application
   ansible.builtin.import_role:
