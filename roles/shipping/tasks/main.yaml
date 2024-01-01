@@ -1,4 +1,4 @@
-- name: Install NodeJS
+- name: Install Maven
   ansible.builtin.import_role:
     name: common
     tasks_from: maven-setup
@@ -17,3 +17,16 @@
   ansible.builtin.command: mv target/shipping-1.0.jar shipping.jar
   args:
       chdir: /app
+
+- name: Load Schema
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: load-mysql-schema
+
+
+
+
+- name: Start application
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: systemd-setup
