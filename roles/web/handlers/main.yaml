@@ -1,0 +1,5 @@
+- name: restart nginx
+  services:
+    name: nginx
+    state: restarted
+    enabled: yes
