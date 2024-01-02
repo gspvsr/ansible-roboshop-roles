@@ -34,5 +34,8 @@
   ansible.builtin.templete:
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf 
-  notify:
-  - restart nginx
+ 
+- name: restart nginx
+  ansible.builtin.services:
+    name: nginx
+    state: restarted
