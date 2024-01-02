@@ -2,15 +2,18 @@
   ansible.builtin.yum:
     name: nginx
     state: installed
+
 - name: start and enable nginx
   ansible.builtin.service:
     name: nginx
     state: started
     enabled: yes
+
 - name: remove html directory
   ansible.builtin.file:
     path: /usr/share/nginx/html
     state: absent
+    
 - name: create html directory
   ansible.builtin.file:
     path: /usr/share/nginx/html
@@ -27,9 +30,10 @@
     dest: /usr/share/nginx/html
     remote_src: yes
 
-- name: copy roboshop.conf
+- name: Copy roboshop.conf
   ansible.builtin.template:
     src: roboshop.conf.j2
     dest: /etc/nginx/default.d/roboshop.conf
+    remote_src: yes
   notify:
   - restart nginx
