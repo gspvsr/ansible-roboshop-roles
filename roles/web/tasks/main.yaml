@@ -32,7 +32,7 @@
 
 - name: Copy roboshop.conf
   ansible.builtin.template:
-    src: /home/centos/ansible-roboshop-roles/templates/roboshop.conf.j2
+    src: gsp.conf.j2
     dest: /etc/nginx/default.d/roboshop.conf
     remote_src: yes
   notify:
